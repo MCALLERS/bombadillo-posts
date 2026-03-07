@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Children's Story Concepts (Ages 3-5) — Bombadillo AI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #0a0a0f;
+            color: #e0e0e0;
+            min-height: 100vh;
+        }
+        .nav {
+            padding: 16px 20px;
+            border-bottom: 1px solid #2a2a3e;
+        }
+        .nav a {
+            color: #f39c12;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .nav a:hover { text-decoration: underline; }
+        .header {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px 20px;
+        }
+        .header h1 {
+            font-size: 2rem;
+            color: #f0f0f0;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        .header .meta {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        .header .meta .tag {
+            display: inline-block;
+            background: #1a1a2e;
+            color: #f39c12;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-left: 8px;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 20px 60px;
+            line-height: 1.75;
+            font-size: 1.05rem;
+        }
+        .content h2 {
+            font-size: 1.4rem;
+            color: #f0f0f0;
+            margin: 32px 0 12px;
+        }
+        .content h3 {
+            font-size: 1.15rem;
+            color: #ddd;
+            margin: 24px 0 10px;
+        }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol {
+            margin: 0 0 16px 24px;
+        }
+        .content li { margin-bottom: 6px; }
+        .content blockquote {
+            border-left: 3px solid #f39c12;
+            padding: 12px 20px;
+            margin: 20px 0;
+            background: #12121a;
+            border-radius: 0 6px 6px 0;
+            color: #ccc;
+        }
+        .content code {
+            background: #1a1a2e;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .content pre {
+            background: #12121a;
+            border: 1px solid #2a2a3e;
+            border-radius: 8px;
+            padding: 16px;
+            overflow-x: auto;
+            margin: 16px 0;
+        }
+        .content pre code {
+            background: none;
+            padding: 0;
+        }
+        .content img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 16px 0;
+        }
+        .content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+        .content th, .content td {
+            padding: 10px 14px;
+            border: 1px solid #2a2a3e;
+            text-align: left;
+        }
+        .content th {
+            background: #1a1a2e;
+            color: #f39c12;
+        }
+        .content a { color: #f39c12; }
+
+        /* Mermaid diagram support */
+        .mermaid {
+            background: #12121a;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+            text-align: center;
+        }
+
+        .footer {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            border-top: 1px solid #2a2a3e;
+            text-align: center;
+            color: #444;
+            font-size: 0.8rem;
+        }
+
+        /* Access code overlay */
+        .lock-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: #0a0a0f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .lock-box {
+            text-align: center;
+            padding: 40px;
+        }
+        .lock-box h2 {
+            color: #f0f0f0;
+            margin-bottom: 12px;
+        }
+        .lock-box p {
+            color: #888;
+            margin-bottom: 24px;
+        }
+        .lock-box input {
+            padding: 10px 16px;
+            font-size: 1rem;
+            background: #12121a;
+            border: 1px solid #2a2a3e;
+            border-radius: 6px;
+            color: #e0e0e0;
+            width: 200px;
+            text-align: center;
+        }
+        .lock-box input:focus {
+            outline: none;
+            border-color: #f39c12;
+        }
+        .lock-box button {
+            display: block;
+            margin: 16px auto 0;
+            padding: 10px 24px;
+            background: #f39c12;
+            color: #0a0a0f;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .lock-box button:hover { background: #e67e22; }
+        .lock-box .error {
+            color: #e74c3c;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="/">&larr; Back to Bombadillo AI</a>
+    </div>
+    <div class="header">
+        <h1>Children's Story Concepts (Ages 3-5)</h1>
+        <p class="meta">March 07, 2026 &mdash; Bubba Grand<span class="tag">creative</span></p>
+    </div>
+    <div class="content">
+        <h1>✨ Three Children's Story Concepts for Ages 3-5</h1>
+
+<p style="font-size: 1.1em; color: #666; margin-bottom: 40px;">
+  <strong>Purpose:</strong> Animated children's stories with engaging characters, simple life lessons, and bright visuals.<br>
+  <strong>Target Age:</strong> 3-5 years old<br>
+  <strong>Next Step:</strong> Select one concept for full story development and animation
+</p>
+
+<hr style="margin: 40px 0; border: 2px solid #e0e0e0;">
+
+<!-- STORY 1 -->
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 15px; margin-bottom: 50px;">
+  <h2 style="color: white; font-size: 2.2em; margin-top: 0;">🌙 Story 1: Luna's Lost Sparkle</h2>
+  <p style="font-size: 1.2em; margin-bottom: 10px;"><strong>Theme:</strong> Sharing, Friendship, Asking for Help</p>
+</div>
+
+<h3>📖 Story Summary</h3>
+<p style="font-size: 1.1em; line-height: 1.8;">
+  Luna is a little moon who lights up the night sky every evening. But one night, she wakes up to discover her sparkle is gone! She feels dim, worried, and doesn't know what to do. Luna bravely visits her friends in the sky—the warm Sun, the wise Star, and the soft Cloud—asking each one for help. Each friend generously shares a bit of their special light with Luna. By the end, Luna glows with a beautiful mix of colors and realizes that friends help each other shine brighter together.
+</p>
+
+<h3>💡 Key Lesson</h3>
+<ul style="font-size: 1.1em; line-height: 1.8;">
+  <li>It's okay to ask for help when you need it</li>
+  <li>Friends share and support each other</li>
+  <li>Everyone has something special to give</li>
+  <li>Working together makes us all stronger</li>
+</ul>
+
+<h3>🎬 Detailed Storyboard (8 Scenes)</h3>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #667eea; margin-bottom: 20px;">
+  <h4>Scene 1: Luna Wakes Up</h4>
+  <p><strong>Visual:</strong> A cute moon character (round face, big expressive eyes, small smile) floating in a deep purple-blue gradient sky. Stars twinkle around her. Luna is dim and barely glowing—she looks worried.</p>
+  <p><strong>Text:</strong> "Every night, Luna the Moon lit up the sky. But tonight... something was wrong."</p>
+  <p><strong>Visual Details:</strong> Soft pastels, dreamy atmosphere, Luna has a concerned expression, her usual glow is faded to a dull gray</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #667eea; margin-bottom: 20px;">
+  <h4>Scene 2: Luna Discovers the Problem</h4>
+  <p><strong>Visual:</strong> Luna looking at her reflection in a calm nighttime lake below. The reflection shows how dim she's become. A small tear forms in her eye.</p>
+  <p><strong>Text:</strong> "Luna looked down and gasped. 'Oh no! My sparkle is gone!'"</p>
+  <p><strong>Repetition Setup:</strong> "Luna asked, 'Can you help me shine?'"</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #667eea; margin-bottom: 20px;">
+  <h4>Scene 3: Luna Visits Sun</h4>
+  <p><strong>Visual:</strong> Luna approaches a warm, glowing Sun character (friendly face, radiating golden rays). Sun is on the horizon, creating a beautiful orange-yellow gradient.</p>
+  <p><strong>Text:</strong> "Luna flew to see her friend Sun. 'Sun, can you help me shine?' Sun smiled warmly."</p>
+  <p><strong>Action:</strong> Sun reaches out and touches Luna gently, sharing a golden glow</p>
+  <p><strong>Visual Details:</strong> Warm colors emerge—golds, oranges, yellows. Luna starts to glow faintly with golden light.</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #667eea; margin-bottom: 20px;">
+  <h4>Scene 4: Sun Shares Light</h4>
+  <p><strong>Visual:</strong> Close-up of Sun touching Luna. Magical sparkles transfer from Sun to Luna in warm golden streams.</p>
+  <p><strong>Text:</strong> "'Of course!' said Sun. 'Here, take some of my golden light!'"</p>
+  <p><strong>Visual Details:</strong> Particle effects showing light transfer, Luna's left side now glows with a warm golden hue</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #667eea; margin-bottom: 20px;">
+  <h4>Scene 5: Luna Visits Star</h4>
+  <p><strong>Visual:</strong> Luna travels higher into the deep night sky to meet Star (five-pointed, twinkly, wise-looking with kind eyes). Star is surrounded by other smaller twinkling stars.</p>
+  <p><strong>Text:</strong> "Next, Luna visited Star. 'Star, can you help me shine?'"</p>
+  <p><strong>Action:</strong> Star twinkles brightly and sprinkles silver stardust onto Luna</p>
+  <p><strong>Visual Details:</strong> Silver and white sparkles, Luna's right side begins to shimmer with silvery light</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #667eea; margin-bottom: 20px;">
+  <h4>Scene 6: Star Shares Light</h4>
+  <p><strong>Visual:</strong> Close-up of Star sprinkling silver stardust. The dust twinkles and dances as it settles on Luna.</p>
+  <p><strong>Text:</strong> "'Always!' said Star. 'Here, have some of my silver sparkle!'"</p>
+  <p><strong>Visual Details:</strong> Glittery effects, Luna now glows with both golden (left) and silver (right) light</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #667eea; margin-bottom: 20px;">
+  <h4>Scene 7: Luna Visits Cloud</h4>
+  <p><strong>Visual:</strong> Luna floats through a soft, fluffy white cloud character (gentle face, cotton-candy texture). Cloud looks cozy and kind.</p>
+  <p><strong>Text:</strong> "Finally, Luna found Cloud. 'Cloud, can you help me shine?'"</p>
+  <p><strong>Action:</strong> Cloud wraps around Luna like a soft blanket, sharing its gentle white glow</p>
+  <p><strong>Visual Details:</strong> Soft whites and light blues, Luna's center now glows with pure white light</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #667eea; margin-bottom: 20px;">
+  <h4>Scene 8: Luna Shines Bright</h4>
+  <p><strong>Visual:</strong> Luna in the center of the night sky, now glowing brilliantly with a mix of golden, silver, and white light. All three friends (Sun on horizon, Star twinkling above, Cloud floating nearby) smile proudly. Children on the ground below point up happily.</p>
+  <p><strong>Text:</strong> "Luna looked at herself and smiled. She glowed with gold from Sun, silver from Star, and white from Cloud. 'Thank you, friends! Together, we all shine brighter!'"</p>
+  <p><strong>Visual Details:</strong> Celebratory atmosphere, magical mixed lighting, Luna's sparkle is even more beautiful than before—a rainbow of light</p>
+  <p><strong>Final Message:</strong> "And every night after that, Luna remembered: friends help each other shine."</p>
+</div>
+
+<h3>🎨 Visual Style Notes</h3>
+<ul style="font-size: 1.05em;">
+  <li><strong>Color Palette:</strong> Deep purples, navy blues, warm golds, silver whites, soft pastels</li>
+  <li><strong>Character Design:</strong> Round, friendly faces with big expressive eyes; simple, appealing shapes</li>
+  <li><strong>Animation Style:</strong> Soft gradients, gentle movements, magical sparkle effects</li>
+  <li><strong>Atmosphere:</strong> Dreamy, comforting, hopeful</li>
+</ul>
+
+<h3>🗣️ Sample Dialogue & Repetition</h3>
+<blockquote style="background: #f0f0ff; padding: 15px; border-left: 4px solid #667eea; font-style: italic;">
+  <strong>Repeated phrase (builds anticipation):</strong><br>
+  "Luna asked, 'Can you help me shine?'"<br><br>
+  <strong>Varied responses (teaches generosity):</strong><br>
+  Sun: "Of course! Here, take some of my golden light!"<br>
+  Star: "Always! Here, have some of my silver sparkle!"<br>
+  Cloud: "With pleasure! Let me share my soft white glow!"
+</blockquote>
+
+<hr style="margin: 50px 0; border: 2px solid #e0e0e0;">
+
+<!-- STORY 2 -->
+<div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: 30px; border-radius: 15px; margin-bottom: 50px;">
+  <h2 style="color: white; font-size: 2.2em; margin-top: 0;">🐰 Story 2: Benny's Night Light Friends</h2>
+  <p style="font-size: 1.2em; margin-bottom: 10px;"><strong>Theme:</strong> Overcoming Fear of the Dark, Discovery & Wonder</p>
+</div>
+
+<h3>📖 Story Summary</h3>
+<p style="font-size: 1.1em; line-height: 1.8;">
+  Benny is a small, fluffy bunny who loves hopping and playing in the bright daytime meadow. But when evening comes and the sky grows dark, Benny feels scared and wants to hide in his burrow. His kind forest friends—Owl, Raccoon, and Deer—notice Benny's fear and want to help. One magical evening, Owl shows Benny something special: the fireflies dancing in the meadow! Benny discovers that the dark isn't scary at all—it's when magical, wonderful things happen. The stars shine, the moon smiles, and the world transforms into a different kind of beautiful.
+</p>
+
+<h3>💡 Key Lesson</h3>
+<ul style="font-size: 1.1em; line-height: 1.8;">
+  <li>It's normal to feel afraid, and that's okay</li>
+  <li>Friends can help us face our fears gently</li>
+  <li>New experiences can be wonderful once we try them</li>
+  <li>The dark has its own kind of magic and beauty</li>
+</ul>
+
+<h3>🎬 Detailed Storyboard (8 Scenes)</h3>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #4facfe; margin-bottom: 20px;">
+  <h4>Scene 1: Daytime Play</h4>
+  <p><strong>Visual:</strong> Bright, sunny meadow filled with colorful wildflowers. Benny (a small white bunny with big ears and bright eyes) hops joyfully, playing with butterflies. Everything is vibrant and cheerful.</p>
+  <p><strong>Text:</strong> "Benny the Bunny loved the daytime! The sun was bright, and he could play all day long."</p>
+  <p><strong>Visual Details:</strong> Warm yellows, bright greens, blue sky, happy energy</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #4facfe; margin-bottom: 20px;">
+  <h4>Scene 2: Twilight Worry</h4>
+  <p><strong>Visual:</strong> The sky begins to change—orange and pink sunset colors. Benny's expression changes from happy to worried. He looks up at the darkening sky with concern. His ears droop slightly.</p>
+  <p><strong>Text:</strong> "But when the sun went down, Benny felt scared. 'I don't like the dark,' he said."</p>
+  <p><strong>Visual Details:</strong> Gradient sky from orange to deep purple, Benny's body language shows hesitation</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #4facfe; margin-bottom: 20px;">
+  <h4>Scene 3: Friends Notice</h4>
+  <p><strong>Visual:</strong> Three forest friends approach: Owl (wise, perched on a branch), Raccoon (playful, mask-like markings), and Deer (gentle, caring eyes). They surround Benny with kind expressions.</p>
+  <p><strong>Text:</strong> "Benny's friends saw him looking worried. 'What's wrong, Benny?' asked Owl."</p>
+  <p><strong>Repetition Setup:</strong> "But Benny said, 'I'm afraid of the dark...'"</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #4facfe; margin-bottom: 20px;">
+  <h4>Scene 4: Owl's Invitation</h4>
+  <p><strong>Visual:</strong> Owl spreads his wings invitingly. The meadow is now in twilight—not fully dark yet, but the first stars are appearing.</p>
+  <p><strong>Text:</strong> "'But Benny,' said Owl gently, 'the night is when magical things happen! Come, I'll show you.'"</p>
+  <p><strong>Visual Details:</strong> Deep blues and purples, a few stars twinkling, mysterious but not scary</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #4facfe; margin-bottom: 20px;">
+  <h4>Scene 5: The Firefly Dance</h4>
+  <p><strong>Visual:</strong> Benny's eyes widen in wonder as dozens of glowing fireflies appear in the meadow, creating patterns of golden light. The fireflies dance and swirl around Benny and his friends. This is the magical turning point.</p>
+  <p><strong>Text:</strong> "Suddenly, tiny lights appeared everywhere! 'Fireflies!' Benny whispered. They danced and twinkled all around him."</p>
+  <p><strong>Visual Details:</strong> Glowing yellow-green lights against dark blue background, trails of light following the fireflies, magical atmosphere</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #4facfe; margin-bottom: 20px;">
+  <h4>Scene 6: Stars Come Out</h4>
+  <p><strong>Visual:</strong> Raccoon points upward. The sky is now full of twinkling stars. Benny looks up in awe, his fear forgotten. The Milky Way is visible in soft, dreamy colors.</p>
+  <p><strong>Text:</strong> "'Look up!' said Raccoon. The whole sky was full of shining stars."</p>
+  <p><strong>Visual Details:</strong> Deep navy sky filled with white and silver stars of different sizes, sense of vastness and wonder</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #4facfe; margin-bottom: 20px;">
+  <h4>Scene 7: Moon Smiles Down</h4>
+  <p><strong>Visual:</strong> A friendly crescent moon with a gentle smiling face appears above. Deer nuzzles Benny reassuringly. The whole scene is peaceful and beautiful.</p>
+  <p><strong>Text:</strong> "'And the moon is here to watch over us,' added Deer softly."</p>
+  <p><strong>Visual Details:</strong> Soft silvery moonlight illuminating the meadow, everything is peaceful and safe</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #4facfe; margin-bottom: 20px;">
+  <h4>Scene 8: Benny's Discovery</h4>
+  <p><strong>Visual:</strong> Benny stands in the center of the nighttime meadow, now completely comfortable. He's surrounded by fireflies, with stars above and the moon shining. His three friends are nearby, smiling. Benny has a joyful, confident expression.</p>
+  <p><strong>Text:</strong> "Benny looked around and smiled. 'The dark isn't scary,' he said. 'It's when all the beautiful things come out to play!' From that night on, Benny loved the nighttime just as much as the day."</p>
+  <p><strong>Final Message:</strong> "Sometimes, the things that seem scary are just waiting to show us something wonderful."</p>
+</div>
+
+<h3>🎨 Visual Style Notes</h3>
+<ul style="font-size: 1.05em;">
+  <li><strong>Color Palette:</strong> Transition from warm daylight (yellows, greens) to magical nighttime (deep blues, purples, glowing yellow-green fireflies, silver moonlight)</li>
+  <li><strong>Character Design:</strong> Benny is small and adorable with big expressive eyes; forest friends are gentle and kind-looking</li>
+  <li><strong>Animation Style:</strong> Soft transitions, glowing effects for fireflies and stars, gentle movements</li>
+  <li><strong>Atmosphere:</strong> Starts cautious, transitions to wonder and discovery, ends peaceful and joyful</li>
+</ul>
+
+<h3>🗣️ Sample Dialogue & Repetition</h3>
+<blockquote style="background: #e8f7ff; padding: 15px; border-left: 4px solid #4facfe; font-style: italic;">
+  <strong>Repeated phrase (validates fear):</strong><br>
+  "But Benny said, 'I'm afraid of the dark...'"<br><br>
+  <strong>Varied responses (gentle reassurance):</strong><br>
+  Owl: "The night is when magical things happen! Come, I'll show you."<br>
+  Raccoon: "Look up! See all those stars?"<br>
+  Deer: "The moon is here to watch over us."<br><br>
+  <strong>Resolution:</strong><br>
+  Benny: "The dark isn't scary—it's when all the beautiful things come out to play!"
+</blockquote>
+
+<hr style="margin: 50px 0; border: 2px solid #e0e0e0;">
+
+<!-- STORY 3 -->
+<div style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; padding: 30px; border-radius: 15px; margin-bottom: 50px;">
+  <h2 style="color: white; font-size: 2.2em; margin-top: 0;">🌱 Story 3: The Singing Seeds</h2>
+  <p style="font-size: 1.2em; margin-bottom: 10px;"><strong>Theme:</strong> Teamwork, Patience, Growth & Unique Strengths</p>
+</div>
+
+<h3>📖 Story Summary</h3>
+<p style="font-size: 1.1em; line-height: 1.8;">
+  Five little seeds are planted in a garden bed: Sunny the Sunflower Seed (tall and cheerful), Carl the Carrot Seed (underground explorer), Tessa the Tomato Seed (round and friendly), Pip the Pea Seed (tiny but mighty), and Stella the Strawberry Seed (sweet and patient). At first, they're all alone in the dark, cool soil and feel a little lonely. But then Sunny starts humming a tune, and soon all the seeds are singing together! Their joyful singing attracts helpful garden friends—earthworms who loosen the soil, bees who promise to visit their flowers, and rain clouds who provide water. As the seeds work together, support each other, and wait patiently, they all grow into beautiful, strong plants. The garden becomes a vibrant, thriving place, and the seeds learn that everyone has something special to contribute.
+</p>
+
+<h3>💡 Key Lesson</h3>
+<ul style="font-size: 1.1em; line-height: 1.8;">
+  <li>Working together makes us stronger</li>
+  <li>Good things take time and patience</li>
+  <li>Everyone has unique strengths and gifts</li>
+  <li>Helping each other leads to growth for all</li>
+</ul>
+
+<h3>🎬 Detailed Storyboard (10 Scenes)</h3>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #43e97b; margin-bottom: 20px;">
+  <h4>Scene 1: Planting Day</h4>
+  <p><strong>Visual:</strong> A sunny garden with a gardener's hands gently placing five different seeds into rich, dark soil. Each seed has a cute face and personality visible even as a seed. Split-screen view showing above ground (sunny garden) and below ground (dark soil).</p>
+  <p><strong>Text:</strong> "One spring morning, five little seeds were planted in a garden. They snuggled into the dark, cool soil."</p>
+  <p><strong>Visual Details:</strong> Bright sky above, dark brown soil below, each seed looks slightly different (shapes, expressions)</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #43e97b; margin-bottom: 20px;">
+  <h4>Scene 2: Feeling Lonely</h4>
+  <p><strong>Visual:</strong> Underground view. The five seeds are separated in the soil, each looking a bit lonely or uncertain. It's dark, and they can't see each other clearly.</p>
+  <p><strong>Text:</strong> "At first, the seeds felt lonely in the dark. 'Hello?' called Sunny the Sunflower Seed. 'Is anyone there?'"</p>
+  <p><strong>Visual Details:</strong> Shadowy, underground, seeds look small and separate</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #43e97b; margin-bottom: 20px;">
+  <h4>Scene 3: The First Song</h4>
+  <p><strong>Visual:</strong> Sunny begins to glow slightly and musical notes appear around him. His little seed face looks hopeful.</p>
+  <p><strong>Text:</strong> "Sunny started to hum a cheerful tune. 'I'm a little sunflower seed, hear me sing...'"</p>
+  <p><strong>Repetition Setup:</strong> Each seed will sing their verse!</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #43e97b; margin-bottom: 20px;">
+  <h4>Scene 4: Seeds Join In</h4>
+  <p><strong>Visual:</strong> One by one, the other seeds light up and join the song. Musical notes of different colors surround each seed. The underground scene becomes brighter and more colorful.</p>
+  <p><strong>Text:</strong> "The other seeds heard Sunny and joined in!<br>
+  Carl sang: 'I'm a little carrot seed, growing deep...'<br>
+  Tessa: 'I'm a little tomato seed, round and sweet...'<br>
+  Pip: 'I'm a little pea seed, small but strong...'<br>
+  Stella: 'I'm a little strawberry seed, patient all along...'<br>
+  Together: 'Together we can do anything!'"</p>
+  <p><strong>Visual Details:</strong> Each seed has a unique color glow—Sunny (yellow), Carl (orange), Tessa (red), Pip (green), Stella (pink)</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #43e97b; margin-bottom: 20px;">
+  <h4>Scene 5: Earthworms Arrive</h4>
+  <p><strong>Visual:</strong> Friendly earthworms with smiling faces wiggle through the soil toward the singing seeds. The soil loosens and becomes easier to grow through.</p>
+  <p><strong>Text:</strong> "The singing attracted friendly earthworms. 'We'll help loosen the soil!' they said, wiggling around the seeds."</p>
+  <p><strong>Visual Details:</strong> Cute pink earthworms, soil particles moving, seeds look grateful</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #43e97b; margin-bottom: 20px;">
+  <h4>Scene 6: Rain Comes</h4>
+  <p><strong>Visual:</strong> Split screen: Above ground, friendly rain clouds with gentle faces drop rain. Below ground, water droplets seep down to the seeds, making them glisten.</p>
+  <p><strong>Text:</strong> "The rain clouds heard the song too. 'We'll give you water to drink!' they said, and gentle rain began to fall."</p>
+  <p><strong>Visual Details:</strong> Blue water droplets, seeds drinking happily, everything looks refreshed</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #43e97b; margin-bottom: 20px;">
+  <h4>Scene 7: Sprouting Begins</h4>
+  <p><strong>Visual:</strong> Underground, tiny green shoots emerge from each seed. They push upward toward the light. The seeds still have faces, now looking excited and determined.</p>
+  <p><strong>Text:</strong> "Days passed. The seeds kept singing and waiting patiently. Then... tiny sprouts began to grow!"</p>
+  <p><strong>Visual Details:</strong> Little green shoots with tiny leaves, sense of upward movement and growth</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #43e97b; margin-bottom: 20px;">
+  <h4>Scene 8: Breaking Through</h4>
+  <p><strong>Visual:</strong> The five sprouts break through the soil surface into the sunlight. Each looks different already—different leaf shapes. Above ground is bright and welcoming.</p>
+  <p><strong>Text:</strong> "'Look! We made it!' cheered the sprouts as they peeked out into the sunshine."</p>
+  <p><strong>Visual Details:</strong> Dramatic moment of breaking through, sunlight streaming down, sense of achievement</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #43e97b; margin-bottom: 20px;">
+  <h4>Scene 9: Growing Strong</h4>
+  <p><strong>Visual:</strong> Time-lapse style showing the plants growing bigger. Bees visit flowers, butterflies flutter by. Each plant develops its unique features. They stand together in the garden bed, still neighbors.</p>
+  <p><strong>Text:</strong> "With sunshine, water, and teamwork, the five friends grew and grew. Sunny stretched tall. Carl's leaves grew bushy. Tessa's vines climbed. Pip's tendrils twisted. Stella spread low and wide."</p>
+  <p><strong>Visual Details:</strong> Different plants at different heights, various greens, healthy growth</p>
+</div>
+
+<div style="background: #f8f9fa; padding: 20px; border-left: 5px solid #43e97b; margin-bottom: 20px;">
+  <h4>Scene 10: Beautiful Garden</h4>
+  <p><strong>Visual:</strong> Full, vibrant garden scene. A tall sunflower with a happy face, carrots peeking from the soil with their green tops, round red tomatoes hanging from vines, peas in their pods, and bright red strawberries on their plant. Bees, butterflies, and birds enjoy the garden. Everything is lush and beautiful.</p>
+  <p><strong>Text:</strong> "Before long, the garden was full of life! Sunny bloomed bright yellow. Carl was crunchy and orange. Tessa was juicy and red. Pip was sweet in his pod. Stella was a perfect red berry. 'We did it!' they sang together. 'When we work together and wait patiently, we all grow strong!'"</p>
+  <p><strong>Final Message:</strong> "And every season, they sang their song, knowing that together, they could do anything."</p>
+</div>
+
+<h3>🎨 Visual Style Notes</h3>
+<ul style="font-size: 1.05em;">
+  <li><strong>Color Palette:</strong> Rich browns (soil), vibrant greens (plants), bright colors for each vegetable/fruit (yellow sunflower, orange carrot, red tomato, green pea, pink-red strawberry), blue sky and water</li>
+  <li><strong>Character Design:</strong> Seeds start small with cute faces; plants grow while maintaining personality; friendly helper characters (earthworms, bees, clouds)</li>
+  <li><strong>Animation Style:</strong> Split-screen underground/above ground views; time-lapse growth; musical notes and singing visualizations</li>
+  <li><strong>Atmosphere:</strong> Starts quiet and intimate, builds to joyful and vibrant, celebrating growth and community</li>
+</ul>
+
+<h3>🗣️ Sample Dialogue & Songs</h3>
+<blockquote style="background: #e8fff8; padding: 15px; border-left: 4px solid #43e97b; font-style: italic;">
+  <strong>Each seed's verse (builds teamwork):</strong><br><br>
+  🌻 Sunny: "I'm a little sunflower seed, hear me sing, growing tall and bright, I'll do my thing!"<br>
+  🥕 Carl: "I'm a little carrot seed, growing deep, underground explorer, secrets to keep!"<br>
+  🍅 Tessa: "I'm a little tomato seed, round and sweet, juicy and red, a garden treat!"<br>
+  🫛 Pip: "I'm a little pea seed, small but strong, tiny but mighty, I'll grow along!"<br>
+  🍓 Stella: "I'm a little strawberry seed, patient all along, waiting for the perfect time to sing my song!"<br><br>
+  <strong>Chorus (all together):</strong><br>
+  "Together we can do anything! We'll help each other grow. With patience, teamwork, and some time—watch our garden glow!"
+</blockquote>
+
+<h3>🎵 Musical Element</h3>
+<p style="font-size: 1.05em;">
+  This story has strong potential for a catchy, repetitive song that children can sing along with. Each character gets their own verse, teaching kids about the different plants while reinforcing the teamwork message. The melody could be simple and upbeat, perfect for preschoolers to memorize.
+</p>
+
+<hr style="margin: 50px 0; border: 2px solid #e0e0e0;">
+
+<!-- COMPARISON TABLE -->
+<h2 style="text-align: center; margin-top: 60px;">📊 Story Comparison at a Glance</h2>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 30px; font-size: 1.05em;">
+  <thead>
+    <tr style="background: #e0e0e0;">
+      <th style="padding: 15px; border: 1px solid #ccc;">Feature</th>
+      <th style="padding: 15px; border: 1px solid #ccc;">Luna's Lost Sparkle</th>
+      <th style="padding: 15px; border: 1px solid #ccc;">Benny's Night Light Friends</th>
+      <th style="padding: 15px; border: 1px solid #ccc;">The Singing Seeds</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 12px; border: 1px solid #ccc;"><strong>Main Theme</strong></td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Asking for help & sharing</td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Overcoming fear & discovery</td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Teamwork & patience</td>
+    </tr>
+    <tr style="background: #f9f9f9;">
+      <td style="padding: 12px; border: 1px solid #ccc;"><strong>Setting</strong></td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Night sky / Space</td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Forest meadow</td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Garden (underground & above)</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border: 1px solid #ccc;"><strong>Protagonist</strong></td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Luna (Moon character)</td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Benny (Bunny)</td>
+      <td style="padding: 12px; border: 1px solid #ccc;">5 seeds (ensemble cast)</td>
+    </tr>
+    <tr style="background: #f9f9f9;">
+      <td style="padding: 12px; border: 1px solid #ccc;"><strong>Emotional Arc</strong></td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Worried → Hopeful → Joyful</td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Scared → Curious → Confident</td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Lonely → Connected → Proud</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border: 1px solid #ccc;"><strong>Visual Style</strong></td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Dreamy, celestial, gradient-heavy</td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Nature-based, glowing effects</td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Vibrant, growth-focused, split-screen</td>
+    </tr>
+    <tr style="background: #f9f9f9;">
+      <td style="padding: 12px; border: 1px solid #ccc;"><strong>Key Repetition</strong></td>
+      <td style="padding: 12px; border: 1px solid #ccc;">"Can you help me shine?"</td>
+      <td style="padding: 12px; border: 1px solid #ccc;">"I'm afraid of the dark..."</td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Each seed's unique verse</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border: 1px solid #ccc;"><strong>Music Potential</strong></td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Gentle, uplifting melodies</td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Soft lullaby to wonder</td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Strong song structure, catchy</td>
+    </tr>
+    <tr style="background: #f9f9f9;">
+      <td style="padding: 12px; border: 1px solid #ccc;"><strong>Age Relatability</strong></td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Needing help from others</td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Fear of the dark (very common)</td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Waiting & growing (planting activities)</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border: 1px solid #ccc;"><strong>Supporting Characters</strong></td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Sun, Star, Cloud (3 friends)</td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Owl, Raccoon, Deer (3 friends)</td>
+      <td style="padding: 12px; border: 1px solid #ccc;">Earthworms, bees, rain clouds</td>
+    </tr>
+    <tr style="background: #f9f9f9;">
+      <td style="padding: 12px; border: 1px solid #ccc;"><strong>Length</strong></td>
+      <td style="padding: 12px; border: 1px solid #ccc;">8 scenes (medium)</td>
+      <td style="padding: 12px; border: 1px solid #ccc;">8 scenes (medium)</td>
+      <td style="padding: 12px; border: 1px solid #ccc;">10 scenes (slightly longer)</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr style="margin: 50px 0; border: 2px solid #e0e0e0;">
+
+<!-- NEXT STEPS -->
+<div style="background: #fff9e6; padding: 30px; border-radius: 10px; border: 3px solid #ffc107; margin-top: 50px;">
+  <h2 style="margin-top: 0;">✅ Next Steps</h2>
+  <ol style="font-size: 1.15em; line-height: 2;">
+    <li><strong>Review</strong> these three story concepts</li>
+    <li><strong>Select</strong> your favorite (or suggest modifications)</li>
+    <li><strong>Reply</strong> to let us know which story to develop fully</li>
+  </ol>
+  
+  <h3>Phase 2 Will Include:</h3>
+  <ul style="font-size: 1.1em; line-height: 1.8;">
+    <li>📝 <strong>Full story manuscript</strong> with polished text for each scene</li>
+    <li>🎨 <strong>AI-generated illustrations</strong> for every scene (consistent character design)</li>
+    <li>🎬 <strong>Animation storyboard</strong> with timing, transitions, and movement notes</li>
+    <li>🎵 <strong>Music/sound suggestions</strong> (or composed music if desired)</li>
+    <li>📱 <strong>Publishing-ready format</strong> (video, interactive book, or both)</li>
+  </ul>
+  
+  <p style="font-size: 1.1em; margin-top: 30px; color: #666;">
+    <strong>Questions or want to combine elements from multiple stories?</strong> Just let us know! We're here to create exactly what you envision.
+  </p>
+</div>
+
+<hr style="margin: 50px 0; border: 2px solid #e0e0e0;">
+
+<p style="text-align: center; color: #999; font-size: 0.95em; margin-top: 60px;">
+  Created by BYB (John Grand) • March 7, 2026 • For ages 3-5
+</p>
+
+    </div>
+    <div class="footer">
+        &copy; 2026 Bombadillo AI &middot; Generated by Bubba Grand
+    </div>
+
+    <!-- Access code script — only active when ACCESS_CODE is set -->
+    <script>
+        (function() {
+            var code = "story2026";
+            if (!code || code === "{{" + "ACCESS_CODE}}") return; // no lock
+            var body = document.querySelector('.content');
+            var header = document.querySelector('.header');
+            body.style.display = 'none';
+            header.style.display = 'none';
+            var overlay = document.createElement('div');
+            overlay.className = 'lock-overlay';
+            overlay.innerHTML = '<div class="lock-box">' +
+                '<h2>This post is protected</h2>' +
+                '<p>Enter the access code to view.</p>' +
+                '<input type="password" id="codeInput" placeholder="Access code" autofocus />' +
+                '<button onclick="checkCode()">Unlock</button>' +
+                '<p class="error" id="codeError">Incorrect code. Try again.</p>' +
+                '</div>';
+            document.body.appendChild(overlay);
+            window.checkCode = function() {
+                var input = document.getElementById('codeInput').value;
+                if (input === code) {
+                    overlay.remove();
+                    body.style.display = '';
+                    header.style.display = '';
+                } else {
+                    document.getElementById('codeError').style.display = 'block';
+                }
+            };
+            document.getElementById('codeInput').addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') checkCode();
+            });
+        })();
+    </script>
+
+    <!-- Mermaid.js for diagrams (loaded only if .mermaid elements exist) -->
+    <script>
+        if (document.querySelector('.mermaid')) {
+            var s = document.createElement('script');
+            s.src = 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.0/mermaid.min.js';
+            s.onload = function() { mermaid.initialize({ theme: 'dark' }); };
+            document.head.appendChild(s);
+        }
+    </script>
+</body>
+</html>
