@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Heron — Premium Animatronic Holiday Decor</title>
+<meta name="description" content="Discover extraordinary handcrafted animatronic holiday decor for Halloween and Christmas. Premium quality, motion-activated collectibles by Blue Heron.">
+
+<link rel="icon" type="image/png" href="./assets/logo.png">
+<link rel="stylesheet" href="./base.css">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- ============================================
+       HEADER
+       ============================================ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo-link" aria-label="Blue Heron home">
+        <img src="./assets/logo.png" alt="Blue Heron logo" width="40" height="40">
+        <span class="logo-text">BLUE HERON</span>
+      </a>
+
+      <nav class="nav-desktop">
+        <ul class="nav-links" role="list">
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#halloween">Halloween</a></li>
+          <li><a href="#christmas">Christmas</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="btn-icon" data-theme-toggle aria-label="Toggle dark mode">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <button class="btn-icon" id="cart-btn" aria-label="Open cart">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+            <span class="cart-badge">0</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile actions -->
+      <div class="nav-mobile-actions">
+        <button class="btn-icon" data-theme-toggle-mobile aria-label="Toggle dark mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="btn-icon mobile-cart-btn" aria-label="Open cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge mobile-badge">0</span>
+        </button>
+        <button class="btn-icon nav-mobile-toggle" aria-label="Open menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <nav class="nav-mobile" aria-label="Mobile navigation">
+      <a href="#shop">Shop</a>
+      <a href="#halloween">Halloween</a>
+      <a href="#christmas">Christmas</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <!-- ============================================
+       HERO
+       ============================================ -->
+  <section class="hero" id="home">
+    <div class="hero-slides">
+      <div class="hero-slide active">
+        <img src="./assets/hero_halloween.png" alt="Halloween Collection - Animated Witch" width="1600" height="900">
+      </div>
+      <div class="hero-slide">
+        <img src="./assets/hero_christmas.png" alt="Christmas Collection - Animated Santa" width="1600" height="900">
+      </div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-badge">Premium Animatronic Decor</span>
+      <h1 class="hero-title">Extraordinary Animatronic Holiday Decor</h1>
+      <p class="hero-subtitle">Handcrafted. Animated. Unforgettable.</p>
+      <a href="#shop" class="hero-cta">
+        Shop the Collection
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="hero-dots">
+      <button class="hero-dot active" aria-label="Slide 1"></button>
+      <button class="hero-dot" aria-label="Slide 2"></button>
+    </div>
+  </section>
+
+  <!-- ============================================
+       COLLECTIONS
+       ============================================ -->
+  <section class="collections-section section" id="shop">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Curated Collections</p>
+        <h2 class="section-title">Shop Our Collections</h2>
+        <p class="section-subtitle">From spine-tingling Halloween to heartwarming Christmas, discover animatronics that bring the magic home.</p>
+      </div>
+
+      <div class="collection-cards reveal">
+        <div class="collection-card" data-category="halloween" id="halloween" role="button" tabindex="0" aria-label="Browse Halloween Collection">
+          <img src="./assets/hero_halloween.png" alt="Halloween Collection" width="600" height="338" loading="lazy">
+          <div class="collection-card-overlay">
+            <span class="collection-card-label">Halloween Collection</span>
+            <span class="collection-card-count">4 products</span>
+          </div>
+        </div>
+        <div class="collection-card" data-category="christmas" id="christmas" role="button" tabindex="0" aria-label="Browse Christmas Collection">
+          <img src="./assets/hero_christmas.png" alt="Christmas Collection" width="600" height="338" loading="lazy">
+          <div class="collection-card-overlay">
+            <span class="collection-card-label">Christmas Collection</span>
+            <span class="collection-card-count">4 products</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar reveal" id="products">
+        <button class="filter-btn active" data-filter="all">All Products</button>
+        <button class="filter-btn" data-filter="halloween">🎃 Halloween</button>
+        <button class="filter-btn" data-filter="christmas">🎄 Christmas</button>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="product-grid" id="product-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ABOUT
+       ============================================ -->
+  <section class="about-section section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content reveal">
+          <p class="section-eyebrow">Our Story</p>
+          <h2>Crafting Holiday Magic Since 2018</h2>
+          <p>At Blue Heron, we believe holiday decor should be more than decoration — it should be an experience. Our team of artisans, engineers, and storytellers design each animatronic figure from the ground up, combining old-world craftsmanship with modern animation technology.</p>
+          <p>Every piece is hand-painted, quality-tested, and built to create moments of wonder for years to come. From the glow of LED eyes to the realistic motion of articulated limbs, we obsess over every detail so you can focus on making memories.</p>
+
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="about-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+              <h3 class="about-feature-title">Handcrafted Design</h3>
+              <p class="about-feature-desc">Each figure is sculpted and hand-painted by artisan craftspeople.</p>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h3 class="about-feature-title">Premium Materials</h3>
+              <p class="about-feature-desc">Built with quality fabrics, durable mechanics, and weatherproof finishes.</p>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <h3 class="about-feature-title">Motion-Activated</h3>
+              <p class="about-feature-desc">Advanced sensors bring each figure to life when guests approach.</p>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+              <h3 class="about-feature-title">Easy Setup</h3>
+              <p class="about-feature-desc">Simple assembly with plug-and-play design. Ready in minutes.</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual reveal reveal-delay-2">
+          <img src="./assets/product_reindeer.png" alt="Blue Heron craftsmanship - animated reindeer" width="500" height="625" loading="lazy">
+          <div class="about-visual-badge">
+            <p class="about-visual-badge-num">50+</p>
+            <p class="about-visual-badge-text">Original designs & counting</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       NEWSLETTER
+       ============================================ -->
+  <section class="newsletter-section section">
+    <div class="container">
+      <div class="newsletter-inner reveal">
+        <h2 class="newsletter-title">Join the Flock</h2>
+        <p class="newsletter-desc">Get early access to new collections, exclusive discounts, and behind-the-scenes looks at our animatronic workshop.</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input class="newsletter-input" type="email" placeholder="Enter your email" required aria-label="Email address">
+          <button class="newsletter-btn" type="submit">Subscribe</button>
+        </form>
+        <p class="newsletter-success">🎉 Welcome to the flock! Check your inbox for a special surprise.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="./assets/logo.png" alt="Blue Heron" width="32" height="32">
+            <span class="footer-logo-text">BLUE HERON</span>
+          </div>
+          <p>Premium animatronic holiday decor, handcrafted with care. Bringing extraordinary holiday magic to homes everywhere.</p>
+          <div class="footer-social">
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1 0-5.78 2.92 2.92 0 0 1 .88.13V9.04a6.33 6.33 0 0 0-.88-.07 6.34 6.34 0 1 0 6.34 6.34v-7a8.16 8.16 0 0 0 3.76.92V6.69z"/></svg>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul role="list">
+            <li><a href="#shop">All Products</a></li>
+            <li><a href="#halloween">Halloween</a></li>
+            <li><a href="#christmas">Christmas</a></li>
+            <li><a href="#">New Arrivals</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul role="list">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul role="list">
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Warranty</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Blue Heron. All rights reserved.</span>
+        <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       PRODUCT MODAL
+       ============================================ -->
+  <div class="modal-overlay" role="dialog" aria-modal="true" aria-label="Product details">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="modal-img">
+        <img src="" alt="" width="450" height="450">
+      </div>
+      <div class="modal-body">
+        <p class="modal-category"></p>
+        <h2 class="modal-title"></h2>
+        <p class="modal-desc"></p>
+        <div class="modal-specs"></div>
+        <p class="modal-price"></p>
+        <button class="btn-modal-cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       CART DRAWER
+       ============================================ -->
+  <div class="cart-overlay"></div>
+  <aside class="cart-drawer" aria-label="Shopping cart">
+    <div class="cart-header">
+      <h2 class="cart-title">Your Cart</h2>
+      <button class="cart-close" aria-label="Close cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="cart-items">
+      <!-- Rendered by JS -->
+    </div>
+    <div class="cart-footer" style="display:none">
+      <div class="cart-total-row">
+        <span class="cart-total-label">Subtotal</span>
+        <span class="cart-total-value">$0.00</span>
+      </div>
+      <button class="btn-checkout">
+        Proceed to Checkout
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ============================================
+       CHECKOUT TOAST
+       ============================================ -->
+  <div class="toast" role="alert">
+    <div class="toast-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <p class="toast-title">Order Confirmed!</p>
+    <p class="toast-text">This is a demo checkout. In production, you'd be redirected to a secure payment processor.</p>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
