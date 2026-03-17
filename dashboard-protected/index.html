@@ -103,18 +103,39 @@
     </div>
 
     <script>
-        const correctPassword = 'blueprint2026';
-        
-        function checkPassword() {
+        async function checkPassword() {
             const input = document.getElementById('password');
             const error = document.getElementById('error');
+            const button = document.querySelector('button');
             
-            if (input.value === correctPassword) {
-                window.location.href = 'main.html';
-            } else {
+            // Disable button during request
+            button.disabled = true;
+            button.textContent = 'Checking...';
+            
+            try {
+                // Call the API to set session cookie
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ password: input.value })
+                });
+                
+                const result = await response.json();
+                
+                if (result.ok) {
+                    window.location.href = 'main.html';
+                } else {
+                    error.classList.add('show');
+                    input.value = '';
+                    input.focus();
+                    button.disabled = false;
+                    button.textContent = 'Access Dashboard';
+                }
+            } catch (err) {
+                error.textContent = 'Connection error. Please try again.';
                 error.classList.add('show');
-                input.value = '';
-                input.focus();
+                button.disabled = false;
+                button.textContent = 'Access Dashboard';
             }
         }
         
