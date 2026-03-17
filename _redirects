@@ -1,0 +1,6 @@
+# Redirect broken React API paths to correct endpoints
+/port/5000/api/auth/check /api/auth/check 200
+/port/5000/api/auth/login /api/auth/login 200
+/port/5000/api/auth/logout /api/auth/logout 200
+/port/5000/api/contracts /api/contracts 200
+/port/5000/api/contracts/* /api/contracts/:splat 200
