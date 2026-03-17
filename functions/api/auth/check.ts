@@ -8,6 +8,10 @@ export async function onRequestGet(context) {
   
   return new Response(JSON.stringify({ authenticated: hasSession }), {
     status: 200,
-    headers: { 'Content-Type': 'application/json' }
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Credentials': 'true'
+    }
   });
 }

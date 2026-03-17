@@ -1,13 +1,15 @@
 // POST /api/auth/login
 export async function onRequestPost(context) {
-  const { request } = context;
+  const { request, env } = context;
   
   try {
     const body = await request.json();
     const { password } = body;
     
-    // Check password (same as in index.html)
-    if (password === 'blueprint2026') {
+    // Check password from environment variable
+    const correctPassword = env.DASHBOARD_PASSWORD || 'blueprint2026';
+    
+    if (password === correctPassword) {
       // Set session cookie (24 hour expiry)
       const sessionToken = crypto.randomUUID();
       
